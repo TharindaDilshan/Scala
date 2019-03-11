@@ -28,7 +28,6 @@ object supermarket{
         cart(8)=new Stock(9,"Noodles",100,120);
         cart(9)=new Stock(10,"Shampoo",50,200);
 
-        //var y=0;
         println("\n\nWELCOME TO OUR SUPERMARKET\n\n");
         while(true){
             println("1. Buy Items");
