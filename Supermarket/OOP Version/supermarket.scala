@@ -16,12 +16,20 @@ class Stock(val id:Int,val name:String,val quant:Int,val unitPrice:Int){
 
 object supermarket{
     def main(args:Array[String]){
-        var cart:Array[Stock]=new Array[Stock](2);
-        cart(0)=new Stock(1,"kitKat",100,50);
-        cart(1)=new Stock(2,"Galaxy",50,40);
+        var cart:Array[Stock]=new Array[Stock](10);
+        cart(0)=new Stock(1,"Chocolate",100,50);
+        cart(1)=new Stock(2,"Milk",50,150);
+        cart(2)=new Stock(3,"Biscuit",100,40);
+        cart(3)=new Stock(4,"Butter",50,120);
+        cart(4)=new Stock(5,"Soap",100,30);
+        cart(5)=new Stock(6,"Cheese",50,200);
+        cart(6)=new Stock(7,"Yoghurt",50,30);
+        cart(7)=new Stock(8,"Juice",100,200);
+        cart(8)=new Stock(9,"Noodles",100,120);
+        cart(9)=new Stock(10,"Shampoo",50,200);
 
         //var y=0;
-        println("\n\nWELCOME TO CHOCLATE AISLE!\n\n");
+        println("\n\nWELCOME TO OUR SUPERMARKET\n\n");
         while(true){
             println("1. Buy Items");
             println("2. Add Items");
@@ -50,8 +58,8 @@ object supermarket{
         var bill:Int=0;
         var z=1;
         println("\n\n----------BUY ITEMS----------\n\n");
-        view(cart);
         while(z!= 0){
+            view(cart);
             var x=scala.io.StdIn.readLine("Enter Product ID: ").toInt;
             var y=scala.io.StdIn.readLine("Enter Quantity: ").toInt;
             if(y > cart(x-1).quantity){
