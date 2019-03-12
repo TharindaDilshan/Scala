@@ -1,8 +1,8 @@
 object cal2{
     def main(args: Array[String]){
-        var n = 0;
+        var n = 0.0;
         var op = "0";
-        var total = 0;
+        var total = 0.0;
 
         println("Enter expression:");
         total = scala.io.StdIn.readLine.toInt;
@@ -15,7 +15,7 @@ object cal2{
                 System.exit(1);
             }
 
-            n = scala.io.StdIn.readLine.toInt;
+            n = scala.io.StdIn.readLine.toFloat;
             op match{
                 case "+" => total = total + n;
                 case "-" => total = total - n;
