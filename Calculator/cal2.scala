@@ -25,4 +25,8 @@ object cal2{
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7a2d6eedadf97dc82f3c3662b91f5fa1e4f25e61
