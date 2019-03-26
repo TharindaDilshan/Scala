@@ -8,7 +8,6 @@ object cal{
         while(true){
             var in = scala.io.StdIn.readLine;
             if(in=="="){
-                //total=total+num2;
                 total=(total-(total%0.01));
                 println("Value: "+total);
                 System.exit(1);
