@@ -49,6 +49,15 @@ object numeric{
                 var n = num(2).toInt-48;
                 var m = num(3).toInt-48;
 
+                if(p==0 && n==0 && m==0){
+                    printf(ones(q-1)+" Thousand");
+                }else if(p==0 && n==1 && m!=0){
+                    printf(ones(q-1)+" Thousand and "+teens(m-1));
+                }else if(p==0 && m==0){
+                    printf(ones(q-1)+" Thousand and "+tens(n-1));
+                }
+
+
                 
             case 5 =>
             case 6 =>
