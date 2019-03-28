@@ -51,6 +51,8 @@ object numeric{
 
                 if(p==0 && n==0 && m==0){
                     printf(ones(q-1)+" Thousand");
+                }else if(p==0 && n==0){
+                    printf(ones(q-1)+" Thousand and "+ones(m-1))
                 }else if(p==0 && n==1 && m!=0){
                     printf(ones(q-1)+" Thousand and "+teens(m-1));
                 }else if(p==0 && m==0){
