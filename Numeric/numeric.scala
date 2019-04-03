@@ -43,26 +43,130 @@ object numeric{
             var i2 = n(1);
             var i3 = n(2);
             if(isOne(i2) && !isZero(i3)){
-                println(ones(i1) + " Hundered " + teens(i3));
+                println(ones(i1) + " Hundred " + teens(i3));
             }
             else{
-                println(ones(i1) + " Hundered " + tens(i2) + " " + ones(i3));
+                println(ones(i1) + " Hundred " + tens(i2) + " " + ones(i3));
             }
             case 4 =>//1234
             var i1 = n(0);
             var i2 = n(1);
             var i3 = n(2);
             var i4 = n(3);
-            
-            case 5 =>//12345
-            var i1 = n(0)-1;
-            var i2 = n(1)-1;
-            var i3 = n(2)-1;
-            var i4 = n(3)-1;
-            var i5 = n(4)-1;
-            
+            if(isZero(i2)){
+               if(isOne(i3) && !isZero(i4)){
+                   if(isZero(i2)){
+                       println(ones(i1) + " Thousand " + teens(i4));
+                   }
+                   else{
+                       println(ones(i1) + " Thousand " + ones(i2) + " Hundred " + teens(i4));
+                   }
+               }
+               else{
+                   println(ones(i1) + " Thousand " + tens(i3) + ones(i4));       
+                }
+            } 
+            else{
+                println(ones(i1) + " Thousand " + ones(i2) + " Hundred " + tens(i3) + " " + ones(i4));
+            }
+            case 5 =>//12345 
+            var i1 = n(0);
+            var i2 = n(1);
+            var i3 = n(2);
+            var i4 = n(3);
+            var i5 = n(4);
+            if(isOne(i4) && !isZero(i5)){
+                if(isOne(i1) && !isZero(i2)){
+                    if(isZero(i3)){
+                        println(teens(i2) + " Thousand " + teens(i5));
+                    }
+                    else{
+                        println(teens(i2) + " Thousand " + ones(i3) + " Hundred " + teens(i5));
+                    }
+                }
+                else if(isOne(i1) && isZero(i2)){
+                    if(isZero(i3)){
+                        println(tens(i1) + " Thousand " + teens(i5));
+                    }
+                    else{
+                        println(tens(i1) + " Thousand " + ones(i3) + " Hundred " + teens(i5));
+                    }
+                }
+                else{
+                    if(isZero(i3)){
+                        println(tens(i1) + ones(i2) + " Thousand " + teens(i5));
+                    }
+                    else{
+                        println(tens(i1) + ones(i2) + " Thousand " + ones(i3) + " Hundred " + teens(i5));
+                    }
+                }
+            }
+            else if(isOne(i4) && isZero(i5)){
+                 if(isOne(i1) && !isZero(i2)){
+                    if(isZero(i3)){
+                        println(teens(i2) + " Thousand " + tens(i4));
+                    }
+                    else{
+                        println(teens(i2) + " Thousand " + ones(i3) + " Hundred " + tens(i4));
+                    }
+                }
+                else if(isOne(i1) && isZero(i2)){
+                    if(isZero(i3)){
+                        println(tens(i1) + " Thousand " + tens(i4));
+                    }
+                    else{
+                        println(tens(i1) + " Thousand " + ones(i3) + " Hundred " + tens(i4));
+                    }
+                }
+                else{
+                    if(isZero(i3)){
+                        println(tens(i1) + ones(i2) + " Thousand " + tens(i4));
+                    }
+                    else{
+                        println(tens(i1) + ones(i2) + " Thousand " + ones(i3) + " Hundred " + tens(i4));
+                    }
+                }
+            }
+            else{
+               if(isOne(i1) && !isZero(i2)){
+                    if(isZero(i3)){
+                        println(teens(i2) + " Thousand " + tens(i4) + ones(i5));
+                    }
+                    else{
+                        println(teens(i2) + " Thousand " + ones(i3) + " Hundred " + tens(i4) + ones(i5));
+                    }
+                }
+                else if(isOne(i1) && isZero(i2)){
+                    if(isZero(i3)){
+                        println(tens(i1) + " Thousand " + tens(i4) + ones(i5));
+                    }
+                    else{
+                        println(tens(i1) + " Thousand " + ones(i3) + " Hundred " + tens(i4) + ones(i5));
+                    }
+                }
+                else{
+                    if(isZero(i3)){
+                        println(tens(i1) + ones(i2) + " Thousand " + tens(i4) + ones(i5));
+                    }
+                    else{
+                        println(tens(i1) + ones(i2) + " Thousand " + ones(i3) + " Hundred " + tens(i4) + ones(i5));
+                    }
+                } 
+            }
             case 6 =>
-            case _ =>
+            var i1 = n(0);
+            var i2 = n(1);
+            var i3 = n(2);
+            var i4 = n(3);
+            var i5 = n(4);
+            var i6 = n(5);
+            if(isOne(i1) && isZero(i2) && isZero(i3) && isZero(i4) && isZero(i5) && isZero(i6)){
+                println(ones(i1) + " Hundred Thousand");
+            }
+            else{
+                println("Out of range");
+            }
+            case _ => println("Out of range");
         }
     }
 
