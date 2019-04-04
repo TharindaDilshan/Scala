@@ -207,7 +207,9 @@ object convert{
             count += 1;
             
         }
-        octArray.append(oct);
+        if(count<=3){
+            octArray.append(oct);
+        }
 
         var l = octArray.length;
          for(i <- (0 to (l-1)).reverse){
@@ -237,11 +239,14 @@ object convert{
             count += 1;
             
         }
-        if(hex>=10){
-            hexArray.append(('A' + (hex-10)).toInt)
-        }else{
-            hexArray.append(hex);
+        if(count<=4){
+            if(hex>=10){
+                hexArray.append(('A' + (hex-10)).toInt)
+            }else{
+                hexArray.append(hex);
+            }
         }
+        
 
         var l = hexArray.length;
          for(i <- (0 to (l-1)).reverse){
