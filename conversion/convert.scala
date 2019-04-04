@@ -47,12 +47,14 @@ object convert{
                 println("\n Decimal representation: " + num);
                 case 7 =>
                 var n = scala.io.StdIn.readLine("\nEnter binary value: ");
-                var num = binToDec(n);
-                decToOct(num);
+                // var num = binToDec(n);
+                // decToOct(num);
+                binToOct(n);
                 case 8 =>
                 var n = scala.io.StdIn.readLine("\nEnter binary value: ");
-                var num = binToDec(n);
-                decToHex(num);
+                // var num = binToDec(n);
+                // decToHex(num);
+                binToHex(n);
                 case 9 =>
                 var n = scala.io.StdIn.readLine("\nEnter octal value: ");
                 var num = octToDec(n);
@@ -186,5 +188,75 @@ object convert{
         }
         return dec;
         //println(dec);
+    }
+    def binToOct(num:String): Unit = {
+        var bin = num.map(_.asDigit);
+        var len = bin.length;
+        var oct = 0;
+        val octArray = ArrayBuffer[Int]();
+        var count = 0;
+
+        for(i <- (0 to (len-1)).reverse){
+            
+            if(count==3){
+                octArray.append(oct);
+                oct = 0;
+                count = 0;
+            }
+            oct = oct + bin(i)*pow(2,count).toInt;
+            count += 1;
+            
+        }
+        octArray.append(oct);
+
+        var l = octArray.length;
+         for(i <- (0 to (l-1)).reverse){
+             print(octArray(i));
+         }
+
+    }
+    def binToHex(num:String): Unit = {
+        var bin = num.map(_.asDigit);
+        var len = bin.length;
+        var hex = 0;
+        val hexArray = ArrayBuffer[Int]();
+        var count = 0;
+
+        for(i <- (0 to (len-1)).reverse){
+            
+            if(count==4){
+                if(hex>=10){
+                    hexArray.append('A' + (hex-10).toInt)
+                }else{
+                    hexArray.append(hex);
+                }
+                hex = 0;
+                count = 0;
+            }
+            hex = hex + bin(i)*pow(2,count).toInt;
+            count += 1;
+            
+        }
+        if(hex>=10){
+            hexArray.append(('A' + (hex-10)).toInt)
+        }else{
+            hexArray.append(hex);
+        }
+
+        var l = hexArray.length;
+         for(i <- (0 to (l-1)).reverse){
+             print(hexArray(i).toChar);
+         }
+
+    }
+    def octToBin(num:String): Unit = {
+        var oct = num.map(_.asDigit);
+        var len = bin.length;
+        //var hex = 0;
+        val binArray = ArrayBuffer[Int]();
+        for(i <- (0 to (len-1)).reverse){
+            
+        }
+
     }
 }
