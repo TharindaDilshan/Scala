@@ -61,8 +61,9 @@ object convert{
                 decToBin(num);
                 case 10 =>
                 var n = scala.io.StdIn.readLine("\nEnter hexadecimal value: ");
-                var num = hexToDec(n);
-                decToBin(num);
+//                 var num = hexToDec(n);
+//                 decToBin(num);
+                hexToBinary(n);
                 case 11 =>
                 var n = scala.io.StdIn.readLine("\nEnter octal value: ");
                 var num = octToDec(n);
@@ -264,4 +265,26 @@ object convert{
         }
 
     }
+    def hexToBinary(num:String): Unit ={
+		var hex = num.map(_.asDigit);
+		var len = hex.length;
+		var binary = ArrayBuffer[Int]();
+		var n = 0;
+		var r = 0;
+		
+		for(i<-(0 to len-1).reverse){
+			n = hex(i).toInt;
+			while(n!=0){
+				r = n%2;
+				n = n/2;
+				binary.append(r);
+			}
+		}
+		
+		len = binary.length;
+		for(i<-(0 to len-1).reverse){
+			print(binary(i));
+		}
+		
+	}
 }
